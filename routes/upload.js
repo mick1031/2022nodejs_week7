@@ -19,6 +19,8 @@ router.post('/', isAuth, upload, function (req, res, next) {
         clientSecret: process.env.IMGUR_CLIENT_SECRET,
         refreshToken: process.env.IMGUR_REFRESH_TOKEN
     })
+
+    const response = {};
     res.send('respond with a resource');
 });
 
