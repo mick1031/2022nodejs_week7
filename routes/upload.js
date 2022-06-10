@@ -1,4 +1,5 @@
 var express = require('express');
+const { default: ImgurClient } = require('imgur');
 const isAuth = require('../services/auth');
 const upload = require('../services/upload');
 
@@ -20,11 +21,19 @@ router.post('/', isAuth, upload, function (req, res, next) {
         refreshToken: process.env.IMGUR_REFRESH_TOKEN
     })
 
-    const response = {};
-    res.send('respond with a resource');
+    const response = await client.upload({
+        image: req.file[0].buffer.toString('base64'),
+        type: 'base64',
+        album: process.env.IMGUR_ALBUM_ID
+    });
+    
+    res.status(200).json({
+        status: 'success',
+        imgUrl: response.data.link
+    });
 });
 
 module.exports = router;
 
 
-function ImgurClient() { }
+
