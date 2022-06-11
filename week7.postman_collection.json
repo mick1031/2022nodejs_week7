@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "431814f9-4fd3-4f58-9c47-2c5ed2c1ecbc",
+		"name": "week7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20566821"
+	},
+	"item": [
+		{
+			"name": "註冊",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mick\",\r\n    \"email\": \"test@example.com\",\r\n    \"password\": \"1q2w3e4r\",\r\n    \"confirmPassword\": \"1q2w3e4r\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://limitless-woodland-76929.herokuapp.com/users/sign_up",
+					"protocol": "https",
+					"host": [
+						"limitless-woodland-76929",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"test@example.com\",\r\n    \"password\": \"1q2w3e4r5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://limitless-woodland-76929.herokuapp.com/users/sign_in",
+					"protocol": "https",
+					"host": [
+						"limitless-woodland-76929",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "重設密碼",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTRlNGI2ODQ3Mjk4YmY1Y2EzMDg3MyIsImlhdCI6MTY1NDk3MzY0OCwiZXhwIjoxNjU1NTc4NDQ4fQ.eVXjTbg9ALcWGMEtmfqyU37iT_PBVAk811dmByDCDtk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"1q2w3e4r5\",\r\n    \"confirmPassword\": \"1q2w3e4r5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://limitless-woodland-76929.herokuapp.com/users/updatePassword",
+					"protocol": "https",
+					"host": [
+						"limitless-woodland-76929",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得個人資料",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTRlNGI2ODQ3Mjk4YmY1Y2EzMDg3MyIsImlhdCI6MTY1NDk3MzY0OCwiZXhwIjoxNjU1NTc4NDQ4fQ.eVXjTbg9ALcWGMEtmfqyU37iT_PBVAk811dmByDCDtk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://limitless-woodland-76929.herokuapp.com/users/profile",
+					"protocol": "https",
+					"host": [
+						"limitless-woodland-76929",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新個人資料",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTRlNGI2ODQ3Mjk4YmY1Y2EzMDg3MyIsImlhdCI6MTY1NDk3MzY0OCwiZXhwIjoxNjU1NTc4NDQ4fQ.eVXjTbg9ALcWGMEtmfqyU37iT_PBVAk811dmByDCDtk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"image\":\"https://images.unsplash.com/photo-1654881212180-86af196fd8dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80\",\r\n    \"name\":\"Mick\",\r\n    \"gender\":\"男\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://limitless-woodland-76929.herokuapp.com/users/profile",
+					"protocol": "https",
+					"host": [
+						"limitless-woodland-76929",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "確認登入",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTRlNGI2ODQ3Mjk4YmY1Y2EzMDg3MyIsImlhdCI6MTY1NDk3MzY0OCwiZXhwIjoxNjU1NTc4NDQ4fQ.eVXjTbg9ALcWGMEtmfqyU37iT_PBVAk811dmByDCDtk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://limitless-woodland-76929.herokuapp.com/users/check_login",
+					"protocol": "https",
+					"host": [
+						"limitless-woodland-76929",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"check_login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取得所有 user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://limitless-woodland-76929.herokuapp.com/users",
+					"protocol": "https",
+					"host": [
+						"limitless-woodland-76929",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "上傳檔案",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTRlNGI2ODQ3Mjk4YmY1Y2EzMDg3MyIsImlhdCI6MTY1NDk3MzY0OCwiZXhwIjoxNjU1NTc4NDQ4fQ.eVXjTbg9ALcWGMEtmfqyU37iT_PBVAk811dmByDCDtk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/C:/Users/qqq19/Desktop/test.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://limitless-woodland-76929.herokuapp.com/upload",
+					"protocol": "https",
+					"host": [
+						"limitless-woodland-76929",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
